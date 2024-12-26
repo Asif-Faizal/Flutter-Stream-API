@@ -2,6 +2,12 @@
 
 This project demonstrates a complete architecture for managing and streaming user data using clean architecture principles, asynchronous streams, and state management with the BLoC (Business Logic Component) pattern in Flutter.
 
+
+
+https://github.com/user-attachments/assets/acaf31f0-0d53-4b8a-9fd6-c5167340d483
+
+
+
 ## Overview
 
 The architecture is divided into three main layers:
