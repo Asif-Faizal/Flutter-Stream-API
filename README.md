@@ -166,3 +166,54 @@ class UserRemoteDataSourceWithRetry implements UserRemoteDataSource {
   }
 }
 ```
+
+## API
+
+### Add a User
+
+To add a new user, send a POST request to the /add-user endpoint.
+
+```bash
+curl -X POST http://localhost:3000/add-user \
+  -H "Content-Type: application/json" \
+  -d '{"name": "John Doe", "email": "johndoe@example.com"}'
+```
+* Endpoint: POST /add-user
+* Headers:
+    Content-Type: application/json
+* Request Body:
+```json
+{
+  "name": "<User's Name>",
+  "email": "<User's Email>"
+}
+```
+* Response Body:
+```json
+{
+  "success": true,
+  "message": "User added successfully."
+}
+```
+
+## Stream Users
+
+To listen to real-time updates of users, use the /stream-users endpoint.
+
+```bash
+curl -N http://localhost:3000/stream-users
+```
+* Endpoint: GET /stream-users
+* Headers: None
+* Response: Server-Sent Events (SSE) stream with updates.
+
+Each event contains:
+```json
+[{
+  "name": "John Doe",
+  "email": "johndoe@gmail.com"
+},{
+  "name": "Kate Bell",
+  "email": "katebell@gmail.com"
+}]
+```
